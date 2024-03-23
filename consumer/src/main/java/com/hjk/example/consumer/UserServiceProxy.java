@@ -2,8 +2,9 @@ package com.hjk.example.consumer;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import com.hjk.common.model.User;
-import com.hjk.common.service.UserService;
+
+import com.hjk.example.common.model.User;
+import com.hjk.example.common.service.UserService;
 import com.hjk.rpc.model.RpcRequest;
 import com.hjk.rpc.model.RpcResponse;
 import com.hjk.rpc.serializer.JdkSerializer;
@@ -18,6 +19,7 @@ import java.io.IOException;
  */
 public class UserServiceProxy implements UserService {
 
+    @Override
     public User getUser(User user) {
         // 指定序列化器
         final Serializer serializer = new JdkSerializer();

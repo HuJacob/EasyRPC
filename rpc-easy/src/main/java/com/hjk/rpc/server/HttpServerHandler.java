@@ -79,7 +79,8 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
         try {
             // 序列化
             byte[] serialized = serializer.serialize(rpcResponse);
-            httpServerResponse.end(Buffer.buffer(serialized));//将序列化对象转化为vertx缓冲区对象结束响应并将数据发送至客户端
+            //将序列化对象转化为vertx缓冲区对象结束响应并将数据发送至客户端
+            httpServerResponse.end(Buffer.buffer(serialized));
         } catch (IOException e) {
             e.printStackTrace();
             httpServerResponse.end(Buffer.buffer());
